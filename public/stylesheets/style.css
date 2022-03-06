@@ -25,10 +25,13 @@ body {
 }
 
 nav {
-  background-color: white;
+  background-color: #99f;
+  height: 6rem;
+  color: #fff;
   font-size: 1.6rem;
   display: flex;
-  justify-content: center;
+  justify-content: space-around;
+  align-items: center;
 }
 
 main {
