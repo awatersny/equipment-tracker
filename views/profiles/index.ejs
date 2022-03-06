@@ -1,0 +1,20 @@
+<%- include('../partials/html-head') %>
+<link rel="stylesheet" href="/stylesheets/style.css">
+<%- include('../partials/nav') %>
+
+<main>
+  <h1>User Profiles</h1>
+  <% if (user?.profile.avatar) { %>
+  <% } %>
+  <ul>
+    <% profiles.forEach(profile => { %>
+      <li>
+        <a href="/<%= profile.id %> ">
+          <%= profile.name %>
+        </a>
+      </li>
+    <% }) %>
+  </ul>
+</main>
+
+<%- include('../partials/footer') %> 
