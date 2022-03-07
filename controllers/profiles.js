@@ -1,4 +1,6 @@
 import { Profile } from "../models/profile.js";
+import { Inventory } from "../models/inventory.js"
+import { Item } from "../models/item.js"
 
 function index(req, res){
   Profile.find({})
@@ -34,7 +36,22 @@ function show(req, res) {
 }
 
 function newItem(req, res){
-  console.log(1)
+  Profile.findById(req.params.id)
+  .then(profile => {
+      Profile.findById(req.user.profile._id)
+      .then(self => {
+        const isSelf = self._id.equals(profile._id)
+        res.render("profiles/new", {
+          title: `${profile.name}'s profile`,
+          profile,
+          isSelf
+        })
+      })
+  })
+  .catch(err => {
+    console.log(err)
+    res.redirect("/")
+  })
 }
 
 export {
