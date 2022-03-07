@@ -8,10 +8,10 @@
       User Profiles
     </a>
     <% if (user) { %>
-      <a href="">
+      <a href="/profiles/<%= user.profile.id %>/new">
         Add Item
       </a>
-      <a href="">
+      <a href="/profiles/<%= user.profile.id %>">
         Manage Inventory
       </a>
       <a href="/auth/logout">
