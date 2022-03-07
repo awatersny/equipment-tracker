@@ -55,7 +55,10 @@ function newItem(req, res){
 }
 
 function create(req, res){
-  console.log(1)
+  req.body.requested = false;
+  req.body.available = false;
+  req.body.borrowed = 
+  console.log(req.body)
 }
 
 export {
