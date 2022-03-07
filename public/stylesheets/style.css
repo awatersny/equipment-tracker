@@ -44,3 +44,10 @@ main {
 h1 {
   font-size: 3.6rem;
 }
+
+form {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: left;
+}

@@ -42,7 +42,7 @@ function newItem(req, res){
       .then(self => {
         const isSelf = self._id.equals(profile._id)
         res.render("profiles/new", {
-          title: `${profile.name}'s profile`,
+          title: `Add New Item`,
           profile,
           isSelf
         })
