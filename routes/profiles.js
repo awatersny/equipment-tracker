@@ -8,6 +8,8 @@ router.get('/', profilesCtrl.index)
 router.get('/:id', isLoggedIn, profilesCtrl.show)
 router.get('/:id/new', isLoggedIn, profilesCtrl.new)
 
+router.post('/:id', isLoggedIn, profilesCtrl.create)
+
 export {
   router
 }

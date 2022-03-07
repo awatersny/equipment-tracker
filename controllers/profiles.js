@@ -54,8 +54,13 @@ function newItem(req, res){
   })
 }
 
+function create(req, res){
+  console.log(1)
+}
+
 export {
   index,
   show,
-  newItem as new
+  newItem as new,
+  create
 }
