@@ -3,7 +3,6 @@ import mongoose from 'mongoose'
 const Schema = mongoose.Schema;
 
 const itemSchema = new mongoose.Schema({
-  name: String,
   condition: {
     type: String,
     enum: ["Good", "Ok", "Poor"]

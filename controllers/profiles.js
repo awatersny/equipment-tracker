@@ -1,6 +1,6 @@
 import { Profile } from "../models/profile.js";
-import { Inventory } from "../models/inventory.js"
-import { Item } from "../models/item.js"
+import { ItemName } from "../models/itemName.js";
+import { Item } from "../models/item.js";
 
 function index(req, res){
   Profile.find({})
@@ -55,10 +55,22 @@ function newItem(req, res){
 }
 
 function create(req, res){
+  console.log(Profile)
+  // if(!req.user.profile.inventory){
+  //   Inventory.create({
+  //     ownedItems: [],
+  //     borrowedItems: []
+  //   })
+  // }
   req.body.requested = false;
   req.body.available = false;
-  req.body.borrowed = 
-  console.log(req.body)
+  req.body.borrowed = Date.now();
+  req.body.due = Date.now();
+  req.body.owner = req.user.profile._id;
+  // Item.create(req.body)
+  // .then(item => {
+  //   res.redirect("/profiles")
+  // })
 }
 
 export {
