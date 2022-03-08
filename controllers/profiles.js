@@ -54,10 +54,7 @@ function newItem(req, res){
 }
 
 function create(req, res){
-  //Create ItemName instance
-  //Create Item instance
-  //Add Item instance to ItemName
-  //Add ItemName to Profile
+  // //Create Item instance
   // Item.create({
   //   condition: req.body.condition,
   //   requested: false,
@@ -67,13 +64,18 @@ function create(req, res){
   //   owner: req.user.profile._id
   // })
   // .then(item => {
+  //   //Create ItemName instance
+  //   //Add Item instance to ItemName
+  //   //Add ItemName to Profile.ownedItems
   //   Profile.findById(req.user.profile._id)
   //   .then(profile => {
-  //     console.log(item._id, profile.ownedItems.some(itmRef => {
-  //       return itmRef === item._id
-  //     }))
+  //     profile.ownedItems.push({
+  //       name: req.body.name,
+  //       item: item._id
+  //     })
+  //     console.log(profile)
   //   })
-    
+
   //   // ItemName.create({
   //   //   name: req.body.name,
   //   //   item: item._id

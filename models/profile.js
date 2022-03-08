@@ -3,8 +3,12 @@ import mongoose from 'mongoose'
 const Schema = mongoose.Schema;
 
 const itemNameSchema = new mongoose.Schema({
-  name: String,
-  Items: [{
+  name: {
+    type: String,
+    required: true,
+    unique: true
+  },
+  items: [{
     type: Schema.Types.ObjectId,
     ref: "Item"
   }]
@@ -13,10 +17,7 @@ const itemNameSchema = new mongoose.Schema({
 const profileSchema = new mongoose.Schema({
   name: String,
   avatar: String,
-  ownedItems: [{
-    type: Schema.Types.ObjectId,
-    ref: "ItemName"
-  }],
+  ownedItems: [itemNameSchema],
   borrowedItems: [itemNameSchema]
 }, {
   timestamps: true

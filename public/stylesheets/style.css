@@ -17,7 +17,7 @@ html {
 }
 
 body {
-  background-color: gray;
+  background-color: #eee;
   /* Use a system font, if none are available use an available sans-sarif font */
   font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto,
     Oxygen-Sans, Ubuntu, Cantarell, 'Helvetica Neue', sans-serif;
@@ -51,4 +51,18 @@ form {
   flex-direction: column;
   justify-content: flex-start;
   align-items: left;
+}
+
+li {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  list-style: none;
+  padding: 1rem;
+  margin: 2rem;
+  background-color: #888;
+  width: 80rem;
+  height: 10rem;
+  border-radius: 2rem;
+  font-size: 2rem;
 }
