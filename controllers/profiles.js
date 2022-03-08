@@ -1,5 +1,4 @@
 import { Profile } from "../models/profile.js";
-import { ItemName } from "../models/itemName.js";
 import { Item } from "../models/item.js";
 
 function index(req, res){
@@ -55,21 +54,33 @@ function newItem(req, res){
 }
 
 function create(req, res){
-  console.log(Profile)
-  // if(!req.user.profile.inventory){
-  //   Inventory.create({
-  //     ownedItems: [],
-  //     borrowedItems: []
-  //   })
-  // }
-  req.body.requested = false;
-  req.body.available = false;
-  req.body.borrowed = Date.now();
-  req.body.due = Date.now();
-  req.body.owner = req.user.profile._id;
-  // Item.create(req.body)
+  //Create ItemName instance
+  //Create Item instance
+  //Add Item instance to ItemName
+  //Add ItemName to Profile
+  // Item.create({
+  //   condition: req.body.condition,
+  //   requested: false,
+  //   available: false,
+  //   borrowed: Date.now(),
+  //   due: Date.now(),
+  //   owner: req.user.profile._id
+  // })
   // .then(item => {
-  //   res.redirect("/profiles")
+  //   Profile.findById(req.user.profile._id)
+  //   .then(profile => {
+  //     console.log(item._id, profile.ownedItems.some(itmRef => {
+  //       return itmRef === item._id
+  //     }))
+  //   })
+    
+  //   // ItemName.create({
+  //   //   name: req.body.name,
+  //   //   item: item._id
+  //   // })
+  //   // .then(itemName => {
+  //   //   console.log(itemName.item)
+  //   // })
   // })
 }
 
