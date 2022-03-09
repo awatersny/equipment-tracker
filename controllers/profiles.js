@@ -11,7 +11,7 @@ function index(req, res){
   })
   .catch(err => {
     console.log(err)
-    res.redirect(`/profiles/${req.user.profile._id}`)
+    res.redirect(`/profiles/${req.user.profile._id}/items`)
   })
 }
 
@@ -63,7 +63,7 @@ function create(req, res){
     .then(profile => {
       profile.ownedItems.push(item._id);
       profile.save()
-      res.redirect(`/profiles/${req.user.profile._id}`)
+      res.redirect(`/profiles/${req.user.profile._id}/items`)
     })
   })
   .catch(err => {

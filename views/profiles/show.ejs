@@ -6,11 +6,13 @@
   <h1><%= profile.name %>'s Inventory</h1>
   <ul>
     <% profile.ownedItems.forEach(item => { %>
-    <li>
-      <span>Item: <%= item.name %></span>
-      <span>Condition: <%= item.condition %></span>
-      <span>Status: <%= item.available ? "Available" : "Unavailable" %></span>
-    </li>
+      <a href="/profiles/<%= profile._id %>/items/<%= item._id %> ">
+        <li>
+          <span>Item: <%= item.name %></span>
+          <span>Condition: <%= item.condition %></span>
+          <span>Status: <%= item.available ? "Available" : "Unavailable" %></span>
+        </li>
+      </a>
     <% }) %>
   </ul>
 </main>

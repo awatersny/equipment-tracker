@@ -1,0 +1,18 @@
+<%- include('../partials/html-head') %>
+<link rel="stylesheet" href="/stylesheets/style.css">
+<%- include('../partials/nav') %>
+
+<main>
+  <h1><%= profile.name %>'s Inventory</h1>
+  <ul>
+    <% profile.ownedItems.forEach(item => { %>
+    <li>
+      <span>Item: <%= item.name %></span>
+      <span>Condition: <%= item.condition %></span>
+      <span>Status: <%= item.available ? "Available" : "Unavailable" %></span>
+    </li>
+    <% }) %>
+  </ul>
+</main>
+
+<%- include('../partials/footer') %> 
