@@ -2,23 +2,17 @@ import mongoose from 'mongoose'
 
 const Schema = mongoose.Schema;
 
-const itemNameSchema = new mongoose.Schema({
-  name: {
-    type: String,
-    required: true,
-    unique: true
-  },
-  items: [{
-    type: Schema.Types.ObjectId,
-    ref: "Item"
-  }]
-})
-
 const profileSchema = new mongoose.Schema({
   name: String,
   avatar: String,
-  ownedItems: [itemNameSchema],
-  borrowedItems: [itemNameSchema]
+  ownedItems: [{
+    type: Schema.Types.ObjectId,
+    ref: "Item"
+  }],
+  borrowedItems: [{
+    type: Schema.Types.ObjectId,
+    ref: "Item"
+  }]
 }, {
   timestamps: true
 })

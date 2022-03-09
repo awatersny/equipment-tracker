@@ -23,6 +23,7 @@ function show(req, res) {
         const isSelf = self._id.equals(profile._id)
         res.render("profiles/show", {
           title: `${profile.name}'s profile`,
+          items: profile.items,
           profile,
           isSelf
         })
@@ -54,36 +55,19 @@ function newItem(req, res){
 }
 
 function create(req, res){
-  // //Create Item instance
-  // Item.create({
-  //   condition: req.body.condition,
-  //   requested: false,
-  //   available: false,
-  //   borrowed: Date.now(),
-  //   due: Date.now(),
-  //   owner: req.user.profile._id
-  // })
-  // .then(item => {
-  //   //Create ItemName instance
-  //   //Add Item instance to ItemName
-  //   //Add ItemName to Profile.ownedItems
-  //   Profile.findById(req.user.profile._id)
-  //   .then(profile => {
-  //     profile.ownedItems.push({
-  //       name: req.body.name,
-  //       item: item._id
-  //     })
-  //     console.log(profile)
-  //   })
-
-  //   // ItemName.create({
-  //   //   name: req.body.name,
-  //   //   item: item._id
-  //   // })
-  //   // .then(itemName => {
-  //   //   console.log(itemName.item)
-  //   // })
-  // })
+  Item.create(req.body)
+  .then(item => {
+    Profile.findById(req.user.profile._id)
+    .then(profile => {
+      profile.ownedItems.push(item._id);
+      profile.save()
+      res.redirect(`/profiles/${req.user.profile._id}`)
+    })
+  })
+  .catch(err => {
+    console.log(err)
+    res.redirect(`/profiles/${req.user.profile._id}/new`)
+  })
 }
 
 export {

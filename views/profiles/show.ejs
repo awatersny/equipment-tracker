@@ -5,8 +5,8 @@
 <main>
   <h1><%= profile.name %>'s Inventory</h1>
   <ul>
-    <% profile.ownedItems.forEach(itemName => { %>
-    <li><%= itemName %></li>
+    <% profile.ownedItems.forEach(item => { %>
+    <li><%= item %></li>
     <% }) %>
   </ul>
 </main>
