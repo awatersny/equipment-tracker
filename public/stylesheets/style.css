@@ -104,3 +104,13 @@ a {
   border-radius: 1rem;
   padding: 1rem;
 }
+
+section > div {
+  font-size: 3rem;
+  display: flex;
+  justify-content: space-between;
+}
+
+section > div > span{
+  padding-left: 10rem;
+}

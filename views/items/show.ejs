@@ -3,16 +3,27 @@
 <%- include('../partials/nav') %>
 
 <main>
-  <h1><%= profile.name %>'s Inventory</h1>
-  <ul>
-    <% profile.ownedItems.forEach(item => { %>
-    <li>
-      <span>Item: <%= item.name %></span>
-      <span>Condition: <%= item.condition %></span>
-      <span>Status: <%= item.available ? "Available" : "Unavailable" %></span>
-    </li>
-    <% }) %>
-  </ul>
+  <h1><%= item.name %> Details</h1>
+  <section>
+    <div>Owner: 
+      <span></span>
+    </div>
+    <div>Condition: 
+      <span><%= item.condition %></span>
+    </div>
+    <div>Availability: 
+      <span><%= item.available ? "Available" : "Unavailable" %></span>
+    </div>
+    <div>Requested: 
+      <span><%= item.requested ? "Yes" : "No"%></span>
+    </div>
+    <div>Borrowed: 
+      <span><%= item.borrowed.toString().slice(0, 16) %></span>
+    </div>
+    <div>Due:  
+      <span><%= item.due.toString().slice(0, 16) %></span>
+    </div>
+  </section>
 </main>
 
 <%- include('../partials/footer') %> 
