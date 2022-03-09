@@ -17,17 +17,19 @@ function index(req, res){
 
 function show(req, res) {
   Profile.findById(req.params.id)
+  .populate('ownedItems')
   .then(profile => {
-      Profile.findById(req.user.profile._id)
-      .then(self => {
-        const isSelf = self._id.equals(profile._id)
+    Profile.findById(req.user.profile._id)
+    .then(self => {
+      Item.find({_id: {$nin: profile.items}}, items => {
         res.render("profiles/show", {
           title: `${profile.name}'s profile`,
           items: profile.items,
           profile,
-          isSelf
+          isSelf: self._id.equals(profile._id)
         })
-      })
+      }) 
+    })
   })
   .catch(err => {
     console.log(err)
