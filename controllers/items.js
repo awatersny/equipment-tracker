@@ -19,7 +19,12 @@ function deleteItem(req, res) {
   console.log(req.params.id)
 }
 
+function edit(req, res) {
+  console.log(1)
+}
+
 export {
   show,
-  deleteItem as delete
+  deleteItem as delete,
+  edit
 }
