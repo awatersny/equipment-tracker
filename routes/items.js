@@ -6,6 +6,8 @@ const router = Router();
 
 router.get('/:id', isLoggedIn, itemsCtrl.show)
 
+router.delete('/:id', isLoggedIn, itemsCtrl.delete)
+
 export {
   router
 }

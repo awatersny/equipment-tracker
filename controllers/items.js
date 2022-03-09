@@ -15,6 +15,11 @@ function show(req, res){
   })
 }
 
+function deleteItem(req, res) {
+  console.log(req.params.id)
+}
+
 export {
-  show
+  show,
+  deleteItem as delete
 }

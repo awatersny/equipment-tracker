@@ -72,14 +72,9 @@ function create(req, res){
   })
 }
 
-function deleteItem(req, res) {
-  console.log(1)
-}
-
 export {
   index,
   show,
   newItem as new,
   create,
-  deleteItem as delete
 }
