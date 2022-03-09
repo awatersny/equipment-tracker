@@ -4,14 +4,14 @@
 </head>
 <body>
   <nav>
-    <a href="/profiles">
+    <a class="not-button" href="/profiles">
       User Profiles
     </a>
     <% if (user) { %>
-      <a href="/profiles/<%= user.profile.id %>/new">
+      <a class="not-button" href="/profiles/<%= user.profile.id %>/new">
         Add Item
       </a>
-      <a href="/profiles/<%= user.profile.id %>">
+      <a class="not-button" href="/profiles/<%= user.profile.id %>">
         Manage Inventory
       </a>
       <a href="/auth/logout">

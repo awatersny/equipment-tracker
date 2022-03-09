@@ -57,15 +57,28 @@ form {
 li {
   display: flex;
   align-items: center;
-  justify-content: space-around;
+  justify-content: space-between;
   list-style: none;
-  padding: 1rem;
+  padding: 2rem 2.5rem;
   margin: 2rem;
   background-color: #555;
   width: 80rem;
   height: 10rem;
   border-radius: 2rem;
   font-size: 2rem;
+  box-shadow: 0 5px 11px black;
+}
+
+li:hover {
+  box-shadow: none;
+  border: 0.5rem solid #99f;
+}
+
+li > img {
+  border-radius: 1rem;
+  border: .3rem solid #eee;
+  font-size: 1rem;
+  height: 8rem;
 }
 
 li > span {
@@ -74,4 +87,11 @@ li > span {
 
 a {
   text-decoration: none;
+}
+
+.not-button:hover {
+  color: #fff;
+  background-color: #55b;
+  border-radius: 1rem;
+  padding: 1rem;
 }
