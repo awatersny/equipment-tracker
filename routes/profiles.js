@@ -9,6 +9,7 @@ router.get('/:id/items', isLoggedIn, profilesCtrl.show)
 router.get('/:id/new', isLoggedIn, profilesCtrl.new)
 
 router.post('/:id/items', isLoggedIn, profilesCtrl.create)
+router.delete('/:id', isLoggedIn, profilesCtrl.delete)
 
 export {
   router
