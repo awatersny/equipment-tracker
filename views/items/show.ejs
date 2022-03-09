@@ -18,10 +18,10 @@
       <span><%= item.requested ? "Yes" : "No"%></span>
     </div>
     <div>Borrowed: 
-      <span><%= item.borrowed.toString().slice(0, 16) %></span>
+      <span><%= item.borrowed.toLocaleDateString() %></span>
     </div>
     <div>Due:  
-      <span><%= item.due.toString().slice(0, 16) %></span>
+      <span><%= item.due.toLocaleDateString() %></span>
     </div>
   </section>
 </main>

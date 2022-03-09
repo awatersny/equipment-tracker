@@ -78,9 +78,17 @@ li {
   box-shadow: 0 5px 11px black;
 }
 
-li:hover {
+button {
+  font-size: 1.7rem;
+}
+
+li.profile:hover {
   box-shadow: none;
   border: 0.5rem solid #99f;
+}
+
+li.item {
+  height: 15rem;
 }
 
 li > img {
@@ -105,6 +113,10 @@ a {
   padding: 1rem;
 }
 
+section {
+  width: 30vw;
+}
+
 section > div {
   font-size: 3rem;
   display: flex;
@@ -113,4 +125,24 @@ section > div {
 
 section > div > span{
   padding-left: 10rem;
+}
+
+#item-details {
+  color: #fff;
+  border-radius: .5rem;
+  background-color: #77d;
+  padding: .1rem 1rem;
+}
+
+#item-details:hover {
+  border: .2rem solid #fff;
+}
+
+div#buttons > form{
+  margin: 1rem 0;
+}
+
+button#delete {
+  color: #fff;
+  background-color: #f00;
 }

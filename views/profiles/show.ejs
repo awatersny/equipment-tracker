@@ -6,19 +6,41 @@
   <h1><%= profile.name %>'s Inventory</h1>
   <ul>
     <% profile.ownedItems.forEach(item => { %>
-      <a href="/profiles/<%= profile._id %>/items/<%= item._id %> ">
-        <li>
+        <li class="item">
           <span>Item: <%= item.name %></span>
           <span>Condition: <%= item.condition %></span>
           <span>Status: <%= item.available ? "Available" : "Unavailable" %></span>
-          <form 
-            action="/profiles/<%= profile._id %>/?_method=DELETE"
-            method="POST"
-          >
-            <button>Delete Item</button>
-          </form>
+          <span>Requested: <%= item.requested ? "Yes" : "No" %></span>
+          <div id="buttons">
+            <a 
+              href="/profiles/<%= profile._id %>/items/<%= item._id %> "
+              id="item-details"
+            >
+              Item Details
+            </a>
+            <% if (isSelf) { %>
+              <form 
+                action="/profiles/<%= profile._id %>/?_method=PUT"
+                method="POST"
+              >
+                <button type="submit">Edit Item</button>
+              </form>
+              <form 
+                action="/profiles/<%= profile._id %>/?_method=DELETE"
+                method="POST"
+              >
+                <button type="submit" id="delete">Delete Item</button>
+              </form>
+            <% } else { %>
+              <form 
+                action="/profiles/<%= profile._id %>/?_method=PATCH"
+                method="POST"
+              >
+                <button type="submit">Request Item</button>
+              </form>
+            <% } %> 
+          </div>
         </li>
-      </a>
     <% }) %>
   </ul>
 </main>
