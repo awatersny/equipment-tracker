@@ -13,11 +13,13 @@ const requestSchema = new Schema({
   description: String,
   borrowDate: {
     type: Date,
-    default: Date.now()
+    default: Date.now(),
+    required: true
   },
   returnDate: {
     type: Date,
-    default: Date.now()
+    default: Date.now(),
+    required: true
   },
   borrower: {
     type: Schema.Types.ObjectId,

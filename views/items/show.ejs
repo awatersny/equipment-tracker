@@ -34,19 +34,19 @@
       method="POST"
     >
       <label for="borrowDate">
-        From:
+        From:<br>(Required)
         <input 
           type="datetime-local" 
           name="borrowDate"
-          value="<%= item.due.toLocaleDateString()%>"
+          value="<%= Date.now()%>"
         >
       </label>
       <label for="returnDate">
-        Till:
+        Till:<br>(Required)
         <input 
           type="datetime-local" 
           name="returnDate"
-          value="<%= item.due.toLocaleDateString()%>"
+          value="<%= Date.now()%>"
         >
       </label>
       <label for="description">
@@ -82,7 +82,11 @@
                 0<%= request.borrowDate.getMinutes()%>
               <% } %>
 
-              <%= request.borrowDate.getHours() > 12 ? "PM" : "AM" %> 
+              <% if (request.borrowDate.getHours() > 12 || request.borrowDate.getHours() === 12) { %>
+                PM
+              <% } else { %>
+                AM
+              <% } %>
             </td>
             <td>
               <%= request.returnDate.toLocaleDateString()%> 
@@ -94,7 +98,11 @@
                 0<%= request.returnDate.getMinutes()%>
               <% } %>
 
-              <%= request.returnDate.getHours() > 12 ? "PM" : "AM" %> 
+              <% if (request.returnDate.getHours() > 12 || request.returnDate.getHours() === 12) { %>
+                PM
+              <% } else { %>
+                AM
+              <% } %>
             </td>
             <td><%= request.description %> </td>
             <% if (isSelf) { %>
