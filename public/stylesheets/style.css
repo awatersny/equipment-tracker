@@ -167,14 +167,14 @@ section > div > span{
   padding-left: 10rem;
 }
 
-#item-details {
+.item-details {
   color: #fff;
   border-radius: .5rem;
   background-color: #77d;
   padding: .1rem 1rem;
 }
 
-#item-details:hover {
+.item-details:hover {
   border: .2rem solid #fff;
 }
 
@@ -198,4 +198,10 @@ button#delete {
   align-items: center;
   justify-content: center;
   padding-top: 10rem;
+}
+
+@media only screen and (max-width: 800px) {
+  .dt-only{
+    display: none;
+  }
 }

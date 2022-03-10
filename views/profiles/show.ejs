@@ -6,34 +6,34 @@
   <h1><%= profile.name %>'s Inventory</h1>
   <ul>
     <% profile.ownedItems.forEach(item => { %>
-        <li class="item">
-          <span>Item: <%= item.name %></span>
-          <span>Condition: <%= item.condition %></span>
-          <span>Status: <%= item.available ? "Available" : "Unavailable" %></span>
-          <span>Requested: <%= item.requested ? "Yes" : "No" %></span>
-          <div id="buttons">
+      <li class="item">
+        <span>Item:<br><%= item.name %></span>
+        <span class="dt-only">Condition:<br><%= item.condition %></span>
+        <span class="dt-only">Status:<br><%= item.available ? "Available" : "Unavailable" %></span>
+        <span class="dt-only">Requested:<br><%= item.requested ? "Yes" : "No" %></span>
+        <div id="buttons">
+          <a 
+            href="/profiles/<%= profile._id %>/items/<%= item._id %> "
+            class="item-details"
+          >
+            Item Details
+          </a>
+          <% if (isSelf) { %>
             <a 
-              href="/profiles/<%= profile._id %>/items/<%= item._id %> "
-              id="item-details"
+              href="/profiles/<%= profile._id %>/items/<%= item._id %>/edit"
+              class="item-details"
             >
-              Item Details
+              Edit Item
             </a>
-            <% if (isSelf) { %>
-              <a 
-                href="/profiles/<%= profile._id %>/items/<%= item._id %>/edit"
-                id="item-details"
-              >
-                Edit Item
-              </a>
-              <form 
-                action="/profiles/<%= profile._id %>/items/<%= item._id %>?_method=DELETE"
-                method="POST"
-              >
-                <button type="submit" id="delete">Delete Item</button>
-              </form>
-            <% } %>
-          </div>
-        </li>
+            <form 
+              action="/profiles/<%= profile._id %>/items/<%= item._id %>?_method=DELETE"
+              method="POST"
+            >
+              <button type="submit" id="delete">Delete Item</button>
+            </form>
+          <% } %>
+        </div>
+      </li>
     <% }) %>
   </ul>
 </main>
