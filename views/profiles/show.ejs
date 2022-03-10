@@ -19,12 +19,12 @@
               Item Details
             </a>
             <% if (isSelf) { %>
-              <form 
-                action="/profiles/<%= profile._id %>/items/<%= item._id %>/edit"
-                method="GET"
+              <a 
+                href="/profiles/<%= profile._id %>/items/<%= item._id %>/edit"
+                id="item-details"
               >
-                <button type="submit">Edit Item</button>
-              </form>
+                Edit Item
+              </a>
               <form 
                 action="/profiles/<%= profile._id %>/items/<%= item._id %>?_method=DELETE"
                 method="POST"
@@ -32,12 +32,12 @@
                 <button type="submit" id="delete">Delete Item</button>
               </form>
             <% } else { %>
-              <form 
-                action="/profiles/<%= profile._id %>/items"
-                method="GET"
+              <a 
+                href="/profiles/<%= profile._id %>/items"
+                id="item-details"
               >
-                <button type="submit">Request Item</button>
-              </form>
+                Request Item
+              </a>
             <% } %> 
           </div>
         </li>

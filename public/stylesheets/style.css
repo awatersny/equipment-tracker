@@ -138,8 +138,13 @@ section > div > span{
   border: .2rem solid #fff;
 }
 
-div#buttons > form{
-  margin: 1rem 0;
+div#buttons{
+  display: flex;
+  flex-direction: column;
+}
+
+div#buttons > a {
+  margin-bottom: 1rem;
 }
 
 button#delete {

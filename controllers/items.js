@@ -16,11 +16,19 @@ function show(req, res){
 }
 
 function deleteItem(req, res) {
-  console.log(req.params.id)
+  Profile.findById(req.user.profile._id)
+  .then(profile => {
+    profile.ownedItems.remove({_id: req.params.id})
+    profile.save()
+    Item.findByIdAndDelete(req.params.id)
+    .then(item => {
+      res.redirect(`/profiles/${req.user.profile._id}/items`)
+    })
+  })
 }
 
 function edit(req, res) {
-  console.log(1)
+  console.log(req.params.id)
 }
 
 export {
