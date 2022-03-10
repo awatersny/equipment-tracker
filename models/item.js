@@ -22,8 +22,7 @@ const requestSchema = new Schema({
     required: true
   },
   borrower: {
-    type: Schema.Types.ObjectId,
-    ref: "Profile"
+    type: String
   },
   approved: {
     type: Boolean,

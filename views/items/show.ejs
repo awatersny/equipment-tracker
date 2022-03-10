@@ -68,61 +68,61 @@
         </tr>
       </thead>
       <tbody>
-        <tr id="user-req">
           <% item.requests.forEach(request => { %>
-            <td><%= request.borrower %> </td>
-            <td>
-              <%= request.borrowDate.toLocaleDateString()%>
-              <%= request.borrowDate.getHours()===0 ? 12 : request.borrowDate.getHours()%12 %> 
-              : 
-
-              <% if (request.borrowDate.getMinutes()>10) { %>
-                <%= request.borrowDate.getMinutes()%>
-              <% } else { %>
-                0<%= request.borrowDate.getMinutes()%>
-              <% } %>
-
-              <% if (request.borrowDate.getHours() > 12 || request.borrowDate.getHours() === 12) { %>
-                PM
-              <% } else { %>
-                AM
-              <% } %>
-            </td>
-            <td>
-              <%= request.returnDate.toLocaleDateString()%> 
-              <%= request.returnDate.getHours()===12 ? 12 : request.returnDate.getHours()%12 %> 
-              : 
-              <% if (request.returnDate.getMinutes()>10) { %>
-                <%= request.returnDate.getMinutes()%>
-              <% } else { %>
-                0<%= request.returnDate.getMinutes()%>
-              <% } %>
-
-              <% if (request.returnDate.getHours() > 12 || request.returnDate.getHours() === 12) { %>
-                PM
-              <% } else { %>
-                AM
-              <% } %>
-            </td>
-            <td><%= request.description %> </td>
-            <% if (isSelf) { %>
+            <tr>
+              <td><%= request.borrower %> </td>
               <td>
-                <div id="owner-response">
-                  <form 
-                    action=""
-                  >
-                    <button>Approve</button>
-                  </form>
-                  <form 
-                    action=""
-                  >
-                    <button>Decline</button>
-                  </form>
-                </div>
+                <%= request.borrowDate.toLocaleDateString()%><br>
+                <%= request.borrowDate.getHours()%> 
+                : 
+
+                <% if (request.borrowDate.getMinutes()>10) { %>
+                  <%= request.borrowDate.getMinutes()%>
+                <% } else { %>
+                  0<%= request.borrowDate.getMinutes()%>
+                <% } %>
+
+                <% if (request.borrowDate.getHours() > 12 || request.borrowDate.getHours() === 12) { %>
+                  PM
+                <% } else { %>
+                  AM
+                <% } %>
               </td>
+              <td>
+                <%= request.returnDate.toLocaleDateString()%><br>
+                <%= request.returnDate.getHours()%> 
+                : 
+                <% if (request.returnDate.getMinutes()>10) { %>
+                  <%= request.returnDate.getMinutes()%>
+                <% } else { %>
+                  0<%= request.returnDate.getMinutes()%>
+                <% } %>
+
+                <% if (request.returnDate.getHours() > 12 || request.returnDate.getHours() === 12) { %>
+                  PM
+                <% } else { %>
+                  AM
+                <% } %>
+              </td>
+              <td><%= request.description %> </td>
+              <% if (isSelf) { %>
+                <td>
+                  <div id="owner-response">
+                    <form 
+                      action=""
+                    >
+                      <button>Approve</button>
+                    </form>
+                    <form 
+                      action=""
+                    >
+                      <button>Decline</button>
+                    </form>
+                  </div>
+                </td>
+              </tr>
             <% } %>
           <% }) %>
-        </tr>
       </tbody>
     </table>
   <% } else { %>

@@ -44,7 +44,7 @@ function createRequest(req, res) {
   Item.findById(req.params.id)
   .then(item => {
     const newRequest = req.body
-    newRequest.borrower = req.user.profile._id
+    newRequest.borrower = req.user.profile.name
     item.requests.push(newRequest)
     item.save()
     res.redirect(`/profiles/${item.owner._id}/items/${item._id}`)
