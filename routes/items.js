@@ -9,6 +9,8 @@ router.get('/:id/edit', isLoggedIn, itemsCtrl.edit)
 
 router.post('/:id/requests', isLoggedIn, itemsCtrl.createRequest)
 
+router.put('/:id', isLoggedIn, itemsCtrl.update)
+
 router.delete('/:id', isLoggedIn, itemsCtrl.delete)
 
 export {

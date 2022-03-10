@@ -5,8 +5,8 @@
 <main>
   <h1><%= title %> </h1>
   <form 
-    action="/profiles/<%= user.profile.id %>/items"
-    method="PUT"
+    action="/profiles/<%= user.profile.id %>/items/<%= item._id %>/?_method=PUT "
+    method="POST"
   >
     <label for="name">
       Item name:

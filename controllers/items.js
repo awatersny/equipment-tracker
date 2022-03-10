@@ -34,6 +34,10 @@ function deleteItem(req, res) {
       res.redirect(`/profiles/${req.user.profile._id}/items`)
     })
   })
+  .catch(err => {
+    console.log(err)
+    res.redirect("/items")
+  })
 }
 
 function createRequest(req, res) {
@@ -74,9 +78,14 @@ function edit(req, res) {
   })
 }
 
+function update(req, res) {
+  console.log(1)
+}
+
 export {
   show,
   deleteItem as delete,
   edit,
-  createRequest
+  createRequest,
+  update
 }
