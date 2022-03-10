@@ -25,6 +25,8 @@ body {
 }
 
 nav {
+  position: fixed;
+  width: 100vw;
   background-color: #99f;
   margin-bottom: 3rem;
   height: 6rem;
@@ -33,6 +35,7 @@ nav {
   display: flex;
   justify-content: space-around;
   align-items: center;
+  box-shadow: 0 5px 11px black;
 }
 
 main {
@@ -44,6 +47,15 @@ main {
 
 h1 {
   font-size: 5rem;
+  margin-top: 10rem;
+}
+
+h2 {
+  font-size: 4rem;
+}
+
+h3 {
+  font-size: 3rem;
 }
 
 form {
@@ -78,8 +90,33 @@ li {
   box-shadow: 0 5px 11px black;
 }
 
+form {
+  margin-bottom: 10rem;
+}
+
+label {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 2rem;
+}
+
+label > input {
+  margin-left: 5vw; 
+}
+
 button {
   font-size: 1.7rem;
+}
+
+table {
+  width: 30vw;
+  font-size: 2.5rem;
+  margin-bottom: 5rem;
+}
+
+th {
+  text-align: left;
+  border-bottom: .2rem solid #000;
 }
 
 li.profile:hover {
@@ -115,6 +152,7 @@ a {
 
 section {
   width: 30vw;
+  padding-bottom: 10rem;
 }
 
 section > div {
@@ -139,6 +177,7 @@ section > div > span{
 }
 
 div#buttons{
+  height: 100%;
   display: flex;
   flex-direction: column;
 }

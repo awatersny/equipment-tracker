@@ -4,14 +4,23 @@ import { Item } from "../models/item.js";
 function show(req, res){
   Profile.findById(req.user.profile._id)
   .then(self => {
-    console.log(self.ownedItems)
     Item.findById(req.params.id)
     .then(item => {
-      res.render("items/show", {
-        title: item.name,
-        item: item,
+      Profile.findById(item.owner)
+      .then(profile => {
+        const isSelf = self.id === profile.id
+        res.render("items/show", {
+          title: item.name,
+          item: item,
+          profile: profile,
+          isSelf
+        })
       })
     })
+  })
+  .catch(err => {
+    console.log(err)
+    res.redirect("/items")
   })
 }
 

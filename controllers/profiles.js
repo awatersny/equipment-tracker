@@ -57,7 +57,9 @@ function newItem(req, res){
 }
 
 function create(req, res){
-  Item.create(req.body)
+  const newItem = req.body
+  newItem.owner = req.user.profile._id
+  Item.create(newItem)
   .then(item => {
     Profile.findById(req.user.profile._id)
     .then(profile => {

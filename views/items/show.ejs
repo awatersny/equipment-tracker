@@ -2,11 +2,11 @@
 <link rel="stylesheet" href="/stylesheets/style.css">
 <%- include('../partials/nav') %>
 
-<main>
+<main id="item-info">
   <h1><%= item.name %> Details</h1>
   <section>
     <div>Owner: 
-      <span></span>
+      <span><%= profile.name %> </span>
     </div>
     <div>Condition: 
       <span><%= item.condition %></span>
@@ -17,13 +17,62 @@
     <div>Requested: 
       <span><%= item.requested ? "Yes" : "No"%></span>
     </div>
-    <div>Borrowed: 
-      <span><%= item.borrowed.toLocaleDateString() %></span>
-    </div>
-    <div>Due:  
-      <span><%= item.due.toLocaleDateString() %></span>
-    </div>
+    <% if (!item.available) { %>
+      <div>Borrowed: 
+        <span><%= item.borrowed.toLocaleDateString() %></span>
+      </div>
+      <div>Due:  
+        <span><%= item.due.toLocaleDateString() %></span>
+      </div>
+    <% } %>
   </section>
-</main>
+  <h2>Requests</h2>
+  <% if (!isSelf) { %>
+    <h3>Enter Request Here:</h3>
+    <form 
+      action="/profiles/<%= profile._id %> /items/<%= item._id %>/requests"
+      method="POST"
+    >
+      <label for="borrowed">
+        From:
+        <input 
+          type="datetime-local" 
+          name="borrowed"
+          value="<%= item.due.toLocaleDateString()%>"
+        >
+      </label>
+      <label for="due">
+        Till:
+        <input 
+          type="datetime-local" 
+          name="due"
+          value="<%= item.due.toLocaleDateString()%>"
+        >
+      </label>
+      <label for="">
+        Reason (Optional):
+        <textarea name="" id=""></textarea>
+      </label>
+      <button type="submit">Submit Request</button>
+    </form>
+  <% } %>
+  <% if (item.requests.length) { %>
+    <table>
+      <thead>
+        <tr>
+          <th>User</th>
+          <th>From</th>
+          <th>To</th>
+          <th>Reason</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+        </tr>
+      </tbody>
+    </table>
+  <% } else { %>
+    <h3>No Requests</h3>
+  <% } %>
 
 <%- include('../partials/footer') %> 

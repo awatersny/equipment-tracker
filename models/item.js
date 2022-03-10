@@ -9,6 +9,22 @@ const reviewSchema = new Schema({
   timestamps: true
 })
 
+const requestSchema = new Schema({
+  description: String,
+  borrowDate: {
+    type: Date,
+    default: Date.now()
+  },
+  returnDate: {
+    type: Date,
+    default: Date.now()
+  },
+  borrower: {
+    type: Schema.Types.ObjectId,
+    ref: "Profile"
+  }
+})
+
 const itemSchema = new mongoose.Schema({
   name: String,
   condition: {
@@ -35,6 +51,7 @@ const itemSchema = new mongoose.Schema({
     type: Schema.Types.ObjectId,
     ref: "Profile"
   },
+  requests: [requestSchema],
   reviews: [reviewSchema]
 })
 
