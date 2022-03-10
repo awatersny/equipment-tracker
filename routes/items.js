@@ -12,6 +12,7 @@ router.post('/:id/requests', isLoggedIn, itemsCtrl.createRequest)
 router.put('/:id', isLoggedIn, itemsCtrl.update)
 
 router.delete('/:id', isLoggedIn, itemsCtrl.delete)
+router.delete('/:id/requests/:id', isLoggedIn, itemsCtrl.deleteRequest)
 
 export {
   router

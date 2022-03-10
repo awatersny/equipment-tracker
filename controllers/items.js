@@ -91,10 +91,15 @@ function update(req, res) {
   })
 }
 
+function deleteRequest(req, res) {
+  console.log(0)
+}
+
 export {
   show,
   deleteItem as delete,
   edit,
   createRequest,
-  update
+  update,
+  deleteRequest
 }
