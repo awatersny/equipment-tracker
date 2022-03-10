@@ -22,6 +22,10 @@ const requestSchema = new Schema({
   borrower: {
     type: Schema.Types.ObjectId,
     ref: "Profile"
+  },
+  approved: {
+    type: Boolean,
+    default: false
   }
 })
 
