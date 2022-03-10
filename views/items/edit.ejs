@@ -10,11 +10,12 @@
   >
     <label for="name">
       Item name:
-      <input type="text" name="name">
+      <input type="text" name="name" value="<%= item.name %> ">
     </label>
     <label for="condition">
       Item condition:
       <select name="condition">
+        <option value="<%= item.condition %>"><%= item.condition %></option>
         <option value="Good">Good</option>
         <option value="Ok">Ok</option>
         <option value="Poor">Poor</option>
