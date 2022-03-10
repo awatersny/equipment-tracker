@@ -36,6 +36,10 @@ function deleteItem(req, res) {
   })
 }
 
+function createRequest(req, res) {
+  console.log(1)
+}
+
 function edit(req, res) {
   console.log(req.params.id)
 }
@@ -43,5 +47,6 @@ function edit(req, res) {
 export {
   show,
   deleteItem as delete,
-  edit
+  edit,
+  createRequest
 }
