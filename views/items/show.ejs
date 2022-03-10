@@ -49,9 +49,9 @@
           value="<%= item.due.toLocaleDateString()%>"
         >
       </label>
-      <label for="">
-        Reason (Optional):
-        <textarea name="" id=""></textarea>
+      <label for="description">
+        Reason:<br>(Optional)
+        <textarea name="description" ></textarea>
       </label>
       <button type="submit">Submit Request</button>
     </form>
@@ -67,12 +67,44 @@
         </tr>
       </thead>
       <tbody>
-        <tr>
+        <tr id="user-req">
+          <% item.requests.forEach(request => { %>
+            <td><%= request.borrower %> </td>
+            <td>
+              <%= request.borrowDate.toLocaleDateString()%>
+              <%= request.borrowDate.getHours()===0 ? 12 : request.borrowDate.getHours()%12 %> 
+              : <%= request.borrowDate.getMinutes()%>
+              <%= request.borrowDate.getHours() > 12 ? "PM" : "AM" %> 
+            </td>
+            <td>
+              <%= request.returnDate.toLocaleDateString()%> 
+              <%= request.borrowDate.getHours()===0 ? 12 : request.returnDate.getHours()%12 %> 
+              : <%= request.returnDate.getMinutes()%>
+              <%= request.returnDate.getHours() > 12 ? "PM" : "AM" %> 
+            </td>
+            <td><%= request.description %> </td>
+            <td>
+              <div id="owner-response">
+                <form 
+                  action=""
+                >
+                  <button>Approve</button>
+                </form>
+                <form 
+                  action=""
+                >
+                  <button>Decline</button>
+                </form>
+              </div>
+            </td>
+          <% }) %>
         </tr>
       </tbody>
     </table>
   <% } else { %>
     <h3>No Requests</h3>
   <% } %>
+  <%= typeof profile %> 
+  
 
 <%- include('../partials/footer') %> 

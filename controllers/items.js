@@ -13,7 +13,7 @@ function show(req, res){
           title: item.name,
           item: item,
           profile: profile,
-          isSelf
+          isSelf,
         })
       })
     })
@@ -37,7 +37,18 @@ function deleteItem(req, res) {
 }
 
 function createRequest(req, res) {
-  console.log(1)
+  Item.findById(req.params.id)
+  .then(item => {
+    const newRequest = req.body
+    newRequest.borrower = req.user.profile._id
+    item.requests.push(newRequest)
+    item.save()
+    res.redirect(`/profiles/${item.owner._id}/items/${item._id}`)
+  })
+  .catch(err => {
+    console.log(err)
+    res.redirect(`/profiles/${item.owner._id}/items${item._id}`)
+  })
 }
 
 function edit(req, res) {

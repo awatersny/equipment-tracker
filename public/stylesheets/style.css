@@ -114,6 +114,8 @@ table {
   margin-bottom: 5rem;
 }
 
+
+
 th {
   text-align: left;
   border-bottom: .2rem solid #000;
@@ -189,4 +191,11 @@ div#buttons > a {
 button#delete {
   color: #fff;
   background-color: #f00;
+}
+
+#owner-response{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-top: 10rem;
 }
