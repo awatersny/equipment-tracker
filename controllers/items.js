@@ -105,11 +105,25 @@ function deleteRequest(req, res) {
   })
 }
 
+function approveRequest(req, res) {
+  Item.findById(req.params.itemId)
+  .then(item => {
+    console.log(item.borrowed)
+    console.log(item.due)
+    console.log(item.requests.find)
+  })
+  .catch(err => {
+    console.log(err)
+    res.redirect(`/profiles/${req.user.profile._id}/items/${req.params.itemId}`)
+  })
+}
+
 export {
   show,
   deleteItem as delete,
   edit,
   createRequest,
   update,
-  deleteRequest
+  deleteRequest,
+  approveRequest
 }

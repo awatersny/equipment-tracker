@@ -10,6 +10,7 @@ router.get('/:id/edit', isLoggedIn, itemsCtrl.edit)
 router.post('/:id/requests', isLoggedIn, itemsCtrl.createRequest)
 
 router.put('/:id', isLoggedIn, itemsCtrl.update)
+router.put('/:itemId/requests/:requestId', isLoggedIn, itemsCtrl.approveRequest)
 
 router.delete('/:id', isLoggedIn, itemsCtrl.delete)
 router.delete('/:itemId/requests/:requestId', isLoggedIn, itemsCtrl.deleteRequest)
