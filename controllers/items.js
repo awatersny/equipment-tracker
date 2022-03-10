@@ -92,7 +92,14 @@ function update(req, res) {
 }
 
 function deleteRequest(req, res) {
-  console.log(0)
+  Profile.findById(req.user.profile._id)
+  .then(profile => {
+    console.log(profile)
+  })
+  .catch(err => {
+    console.log(err)
+    res.redirect("/items")
+  })
 }
 
 export {
