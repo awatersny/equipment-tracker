@@ -1,0 +1,27 @@
+<%- include('../partials/html-head') %>
+<link rel="stylesheet" href="/stylesheets/style.css">
+<%- include('../partials/nav') %>
+
+<main>
+  <h1><%= title %> </h1>
+  <form 
+    action="/profiles/<%= user.profile.id %>/items"
+    method="PUT"
+  >
+    <label for="name">
+      Item name:
+      <input type="text" name="name">
+    </label>
+    <label for="condition">
+      Item condition:
+      <select name="condition">
+        <option value="Good">Good</option>
+        <option value="Ok">Ok</option>
+        <option value="Poor">Poor</option>
+      </select>
+    </label>
+    <button type="submit">Add Item</button>
+  </form>
+</main>
+
+<%- include('../partials/footer') %> 

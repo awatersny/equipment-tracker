@@ -52,7 +52,26 @@ function createRequest(req, res) {
 }
 
 function edit(req, res) {
-  console.log(req.params.id)
+  Profile.findById(req.user.profile._id)
+  .then(self => {
+    Item.findById(req.params.id)
+    .then(item => {
+      Profile.findById(item.owner)
+      .then(profile => {
+        const isSelf = self.id === profile.id
+        res.render("items/edit", {
+          title: `Edit Item Details`,
+          item: item,
+          profile: profile,
+          isSelf,
+        })
+      })
+    })
+  })
+  .catch(err => {
+    console.log(err)
+    res.redirect("/items")
+  })
 }
 
 export {
