@@ -79,7 +79,16 @@ function edit(req, res) {
 }
 
 function update(req, res) {
-  console.log(1)
+  const newItem = req.body
+  newItem.owner = req.user.profile._id
+  Item.findByIdAndUpdate(req.params.id, req.body)
+  .then(item => {
+      res.redirect(`/profiles/${req.user.profile._id}/items`)
+  })
+  .catch(err => {
+    console.log(err)
+    res.redirect("/items")
+  })
 }
 
 export {
