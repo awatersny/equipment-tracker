@@ -63,52 +63,55 @@
           <th>Requested by</th>
           <th>From</th>
           <th>To</th>
-          <th>Reason</th>
+          <th class="dt-only">Reason</th>
           <th></th>
         </tr>
       </thead>
       <tbody>
           <% item.requests.forEach(request => { %>
-            <tr>
-              <td><%= request.borrower %> </td>
-              <td>
-                <%= request.borrowDate.toLocaleDateString()%><br>
-                <%= request.borrowDate.getHours()%> 
-                : 
-
-                <% if (request.borrowDate.getMinutes()>10) { %>
-                  <%= request.borrowDate.getMinutes()%>
-                <% } else { %>
-                  0<%= request.borrowDate.getMinutes()%>
-                <% } %>
-              </td>
-              <td>
-                <%= request.returnDate.toLocaleDateString()%><br>
-                <%= request.returnDate.getHours()%> 
-                : 
-                <% if (request.returnDate.getMinutes()>10) { %>
-                  <%= request.returnDate.getMinutes()%>
-                <% } else { %>
-                  0<%= request.returnDate.getMinutes()%>
-                <% } %>
-              </td>
-              <td><%= request.description %> </td>
-              <% if (isSelf) { %>
+            <% if (!request.approved) { %>
+              <tr>
+                <td><%= request.borrower %> </td>
                 <td>
-                  <div id="owner-response">
-                    <form 
-                      action=""
-                    >
-                      <button>Approve</button>
-                    </form>
-                    <form 
-                      action="/profiles/<%= profile._id %> /items/<%= item._id %>/requests/<%= request._id %>?_method=DELETE"
-                      method="POST"
-                    >
-                      <button>Decline</button>
-                    </form>
-                  </div>
+                  <%= request.borrowDate.toLocaleDateString()%><br>
+                  <%= request.borrowDate.getHours()%> 
+                  : 
+
+                  <% if (request.borrowDate.getMinutes()>10) { %>
+                    <%= request.borrowDate.getMinutes()%>
+                  <% } else { %>
+                    0<%= request.borrowDate.getMinutes()%>
+                  <% } %>
                 </td>
+                <td>
+                  <%= request.returnDate.toLocaleDateString()%><br>
+                  <%= request.returnDate.getHours()%> 
+                  : 
+                  <% if (request.returnDate.getMinutes()>10) { %>
+                    <%= request.returnDate.getMinutes()%>
+                  <% } else { %>
+                    0<%= request.returnDate.getMinutes()%>
+                  <% } %>
+                </td>
+                <td class="dt-only"><%= request.description %> </td>
+                <% if (isSelf) { %>
+                  <td>
+                    <div id="owner-response">
+                      <form 
+                        action="/profiles/<%= profile._id %> /items/<%= item._id %>/requests/<%= request._id %>?_method=PATCH"
+                        method="POST"
+                      >
+                        <button>Approve</button>
+                      </form>
+                      <form 
+                        action="/profiles/<%= profile._id %> /items/<%= item._id %>/requests/<%= request._id %>?_method=DELETE"
+                        method="POST"
+                      >
+                        <button>Decline</button>
+                      </form>
+                    </div>
+                  </td>
+                <% } %>
               </tr>
             <% } %>
           <% }) %>

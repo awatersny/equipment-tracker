@@ -121,6 +121,10 @@ th {
   border-bottom: .2rem solid #000;
 }
 
+th, td {
+  padding-right: 5rem;
+}
+
 li.profile:hover {
   box-shadow: none;
   border: 0.5rem solid #99f;
