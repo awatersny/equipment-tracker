@@ -81,12 +81,6 @@
                 <% } else { %>
                   0<%= request.borrowDate.getMinutes()%>
                 <% } %>
-
-                <% if (request.borrowDate.getHours() > 12 || request.borrowDate.getHours() === 12) { %>
-                  PM
-                <% } else { %>
-                  AM
-                <% } %>
               </td>
               <td>
                 <%= request.returnDate.toLocaleDateString()%><br>
@@ -96,12 +90,6 @@
                   <%= request.returnDate.getMinutes()%>
                 <% } else { %>
                   0<%= request.returnDate.getMinutes()%>
-                <% } %>
-
-                <% if (request.returnDate.getHours() > 12 || request.returnDate.getHours() === 12) { %>
-                  PM
-                <% } else { %>
-                  AM
                 <% } %>
               </td>
               <td><%= request.description %> </td>
