@@ -1,5 +1,7 @@
 # Equipment Tracker
-  
+An app that currently allows people to request items to be borrowed.
+
+Inspired by my time working as a college assistant at City College of New York
 
 ---
 
@@ -38,6 +40,7 @@ Add Request
 ---
 ## Planned Enhancements:
 
+- Ideal date formatting
 - Improve landing page
 - Improve responsive design
 - Render a warning page for deleting items
