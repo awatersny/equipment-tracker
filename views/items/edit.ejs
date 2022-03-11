@@ -4,7 +4,7 @@
 
 <main>
   <h1><%= title %> </h1>
-  <form 
+  <form id="update"
     action="/profiles/<%= user.profile.id %>/items/<%= item._id %>/?_method=PUT "
     method="POST"
   >

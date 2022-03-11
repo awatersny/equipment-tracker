@@ -29,7 +29,7 @@
   <h2>Requests</h2>
   <% if (!isSelf) { %>
     <h3>Enter Request Here:</h3>
-    <form 
+    <form id="create"
       action="/profiles/<%= profile._id %> /items/<%= item._id %>/requests"
       method="POST"
     >
