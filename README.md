@@ -15,6 +15,12 @@ My Inventory
 ![Owned Items](./public/screenshots/Owned_Inventory.png)
 Another's Inventory
 ![Others' Items](./public/screenshots/Other_Inventory.png)
+Item Details
+![Item Details](./public/screenshots/Item_Details.png)
+Item Requests
+![Item Details](./public/screenshots/My_Item_Requests.png)
+Add Request
+![Item Details](./public/screenshots/Item_Requests.png)
 
 ### Desktop Display
 
