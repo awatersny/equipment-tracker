@@ -22,9 +22,6 @@ Item Requests
 Add Request
 ![Item Details](./public/screenshots/Item_Requests.png)
 
-### Desktop Display
-
----
 
 ## Technologies Used:
 
