@@ -45,3 +45,5 @@ The app is deployed [*here*](https://aw-equipment-tracker.herokuapp.com/).
 - [Skill badges found at dev.to](https://dev.to/envoy_/150-badges-for-github-pnk)
 
 - <a href="https://www.flaticon.com/free-icons/inventory" title="inventory icons">Inventory icons created by Freepik - Flaticon</a>
+
+- [Signal and CIrcuit Board background patterns courtesy of Steve Schoger](https://heropatterns.com/)
