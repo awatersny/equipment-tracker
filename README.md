@@ -9,8 +9,11 @@ The app is deployed [*here*](https://aw-equipment-tracker.herokuapp.com/).
 
 ---
 ## Screenshots:
+User Profiles
 ![Profiles](./public/screenshots/Profiles.png)
+My Inventory
 ![Owned Items](./public/screenshots/Owned_Inventory.png)
+Another's Inventory
 ![Others' Items](./public/screenshots/Other_Inventory.png)
 
 ### Desktop Display
