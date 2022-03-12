@@ -9,6 +9,8 @@ Inspired by my time working as a college assistant at City College of New York
 
 The app is deployed [*here*](https://aw-equipment-tracker.herokuapp.com/).
 
+Initial planning done [*here*](https://trello.com/b/EBUVh0t0/equipment-tracker)
+
 ---
 ## Screenshots:
 User Profiles
