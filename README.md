@@ -3,13 +3,13 @@ An app that currently allows people to request items to be borrowed.
 
 Inspired by my time working as a college assistant at City College of New York
 
+Initial planning done on [*trello*](https://trello.com/b/EBUVh0t0/equipment-tracker).
+
 ---
 
 ## Getting Started:
 
 The app is deployed [*here*](https://aw-equipment-tracker.herokuapp.com/).
-
-Initial planning done [*here*](https://trello.com/b/EBUVh0t0/equipment-tracker)
 
 ---
 ## Screenshots:
