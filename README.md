@@ -52,7 +52,7 @@ Add Request
   
 ---
 
-## Credits
+## Credits:
 - [Skill badges found at dev.to](https://dev.to/envoy_/150-badges-for-github-pnk)
 
 - <a href="https://www.flaticon.com/free-icons/inventory" title="inventory icons">Inventory icons created by Freepik - Flaticon</a>

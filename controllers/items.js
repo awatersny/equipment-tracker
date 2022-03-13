@@ -46,6 +46,7 @@ function createRequest(req, res) {
     const newRequest = req.body
     newRequest.borrower = req.user.profile.name
     item.requests.push(newRequest)
+    item.requested = true;
     item.save()
     res.redirect(`/profiles/${item.owner._id}/items/${item._id}`)
   })
@@ -96,6 +97,7 @@ function deleteRequest(req, res) {
   Item.findById(req.params.itemId)
   .then(item => {
     item.requests.remove({_id: req.params.requestId})
+    item.requested = item.requests.length ? true : false;
     item.save()
     res.redirect(`/profiles/${req.user.profile._id}/items/${req.params.itemId}`)
   })
