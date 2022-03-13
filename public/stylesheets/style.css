@@ -1,6 +1,5 @@
 html {
   box-sizing: border-box;
-  background-color: #99f;
 }
 
 /* The Universal Selector */
@@ -31,9 +30,9 @@ nav {
   width: 100vw;
   background-color: #99f;
   margin-bottom: 3rem;
-  height: 6rem;
+  height: 7rem;
   color: #fff;
-  font-size: 1.6rem;
+  font-size: 2rem;
   display: flex;
   justify-content: space-around;
   align-items: center;
@@ -184,12 +183,28 @@ a {
   text-decoration: none;
 }
 
-.not-button:hover {
+.not-button{
+  padding: 1rem;
+}
+
+.not-button:hover{
+  text-shadow: 0 0rem 1.5rem #fff;
+  background-color: #006;
+  color: #fff;
+  border-radius: 1rem;
+}
+
+button#logout {
   text-shadow: 0 0rem 1.5rem #fff;
   background-color: #006;
   color: #fff;
   border-radius: 1rem;
   padding: 1rem;
+  box-shadow: 0 5px 11px black;
+}
+
+button#logout:hover {
+  box-shadow: none;
 }
 
 section {

@@ -41,3 +41,11 @@
   position: absolute;
   width: 1px;
 }
+
+button#g-signin {
+  box-shadow: 0 5px 11px black;
+}
+
+button#g-signin:hover {
+  box-shadow: none;
+}
