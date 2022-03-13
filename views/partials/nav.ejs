@@ -4,10 +4,10 @@
 </head>
 <body>
   <nav>
-    <a class="not-button" href="/profiles">
-      User Profiles
-    </a>
     <% if (user) { %>
+      <a class="not-button" href="/profiles">
+        User Profiles
+      </a>
       <a class="not-button" href="/profiles/<%= user.profile.id %>/new">
         Add Item
       </a>
