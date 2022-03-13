@@ -134,7 +134,7 @@ button {
 }
 
 table {
-  width: 30vw;
+  width: 80vw;
   font-size: 2.5rem;
   margin-bottom: 5rem;
   background-color: #fff;
@@ -208,13 +208,15 @@ button#logout:hover {
 }
 
 section {
-  width: 30vw;
-  margin-bottom: 10rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 25rem;
+  width: 50vw;
   background-color: #fff;
   padding: 3rem;
   border-radius: 1rem;
   border: .5rem solid #44a;
-
 }
 
 section > div {
