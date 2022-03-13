@@ -64,7 +64,9 @@
           <th>From</th>
           <th>To</th>
           <th class="dt-only">Reason</th>
-          <th></th>
+          <% if (isSelf) { %>
+            <th></th>
+          <% } %>
         </tr>
       </thead>
       <tbody>
