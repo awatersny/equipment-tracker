@@ -9,7 +9,7 @@ Initial planning done on [*trello*](https://trello.com/b/EBUVh0t0/equipment-trac
 
 ## Getting Started:
 
-The app is deployed [*here*](https://aw-equipment-tracker.herokuapp.com/).
+The app is deployed [*here*](https://aw-eqt-tracker.fly.dev/).
 
 ---
 ## Screenshots:
